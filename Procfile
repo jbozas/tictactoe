@@ -1,1 +1,1 @@
-web: gunicorn api.wsgi
+web: gunicorn tictactoe_api.wsgi
