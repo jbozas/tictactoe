@@ -1,0 +1,395 @@
+{
+	"info": {
+		"_postman_id": "4a9204f5-ad0c-4ec7-bb2a-eb27ed26fdf7",
+		"name": "TicTacToe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22320276",
+		"_collection_link": "https://clicoh-team.postman.co/workspace/Team-Workspace~c5cbeb35-1e0b-4a08-8236-2c8a2353415d/collection/22320276-4a9204f5-ad0c-4ec7-bb2a-eb27ed26fdf7?action=share&source=collection_link&creator=22320276"
+	},
+	"item": [
+		{
+			"name": "Create game",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"players\": [\n        {\n            \"name\": \"me\",\n            \"symbol\": \"X\"\n        },\n        {\n            \"name\": \"other\",\n            \"symbol\": \"Z\"\n        }\n    ],\n    \"starting_player\": \"me\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/create-game/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"create-game",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"players\": [\n        {\n            \"name\": \"me\",\n            \"symbol\": \"X\"\n        },\n        {\n            \"name\": \"other\",\n            \"symbol\": \"Z\"\n        }\n    ],\n    \"starting_player\": \"me\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/create-game/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"create-game",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 27 Dec 2023 20:54:02 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.5"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "192"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 10,\n    \"players\": [\n        \"Player me, symbol: (X)\",\n        \"Player other, symbol: (Z)\"\n    ],\n    \"movements_played\": 0,\n    \"next_turn\": \"Player me, symbol: (X)\",\n    \"board\": [\n        \" \",\n        \" \",\n        \" \",\n        \" \",\n        \" \",\n        \" \",\n        \" \",\n        \" \",\n        \" \"\n    ],\n    \"winner\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Submit Play",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"game_id\": 1234,\n    \"player\": \"other\",\n    \"row\": 1,\n    \"column\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/create-game/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"create-game",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get game",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Get game",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/games/11",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"games",
+								"11"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 27 Dec 2023 21:52:01 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.5"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "215"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 11,\n    \"players\": [\n        \"Player me, symbol: (X)\",\n        \"Player other, symbol: (Z)\"\n    ],\n    \"movements_played\": 5,\n    \"next_turn\": \"Player other, symbol: (Z)\",\n    \"board\": [\n        \"Z\",\n        \"Z\",\n        \"X\",\n        \" \",\n        \" \",\n        \"X\",\n        \" \",\n        \" \",\n        \"X\"\n    ],\n    \"winner\": \"Player me, symbol: (X)\"\n}"
+				}
+			]
+		},
+		{
+			"name": "List games",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "List games",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/games/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"games",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 27 Dec 2023 21:50:24 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.5"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "761"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"movements_played\": 0,\n        \"is_finished\": false,\n        \"is_deleted\": false\n    },\n    {\n        \"id\": 2,\n        \"movements_played\": 0,\n        \"is_finished\": false,\n        \"is_deleted\": false\n    },\n    {\n        \"id\": 3,\n        \"movements_played\": 0,\n        \"is_finished\": false,\n        \"is_deleted\": false\n    },\n    {\n        \"id\": 4,\n        \"movements_played\": 0,\n        \"is_finished\": false,\n        \"is_deleted\": false\n    },\n    {\n        \"id\": 5,\n        \"movements_played\": 0,\n        \"is_finished\": false,\n        \"is_deleted\": false\n    },\n    {\n        \"id\": 6,\n        \"movements_played\": 0,\n        \"is_finished\": false,\n        \"is_deleted\": false\n    },\n    {\n        \"id\": 7,\n        \"movements_played\": 0,\n        \"is_finished\": false,\n        \"is_deleted\": false\n    },\n    {\n        \"id\": 8,\n        \"movements_played\": 0,\n        \"is_finished\": false,\n        \"is_deleted\": false\n    },\n    {\n        \"id\": 9,\n        \"movements_played\": 0,\n        \"is_finished\": false,\n        \"is_deleted\": false\n    },\n    {\n        \"id\": 10,\n        \"movements_played\": 2,\n        \"is_finished\": false,\n        \"is_deleted\": false\n    },\n    {\n        \"id\": 11,\n        \"movements_played\": 5,\n        \"is_finished\": true,\n        \"is_deleted\": false\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete game",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Deleted",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/games/11/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"games",
+								"11",
+								""
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 27 Dec 2023 22:03:39 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.5"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Game deleted successfully\"\n}"
+				}
+			]
+		}
+	]
+}
