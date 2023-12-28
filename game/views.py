@@ -66,6 +66,8 @@ class SubmitPlayAPIView(APIView):
 
 
 class GameViewSet(viewsets.ModelViewSet):
+    http_method_names = ['get', 'delete']
+
     def get_queryset(self):
         queryset = Game.objects.all()
 
@@ -81,7 +83,7 @@ class GameViewSet(viewsets.ModelViewSet):
         if self.action == "list":
             return GameListSerializer
         return GameOutputSerializer
-
+    
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = self.get_serializer_class()(instance)
