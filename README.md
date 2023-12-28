@@ -43,3 +43,7 @@ This guide provides instructions for deploying the TicTacToe API locally using D
 * Introduce pagination for the list of games.
 * Enhance test coverage to ensure comprehensive unit testing.
 * Implement better handling of players with repeated names.
+* Implement a pre-commit configuration.
+* Implement a library to do static checks.(mypy)
+* Implement a hook that runs pre-commit, static checks and tests before the deploy and after pushing.
+* I wanted to try out EC2 to deploy this project.
